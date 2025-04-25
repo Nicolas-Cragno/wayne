@@ -10,8 +10,8 @@ namespace dominio
     public class Persona
     {
         public int Dni { get; set; }
-        public int Tipo_Empleado { get; set; }
-        public int Empresa { get; set; }
+        public string Tipo_Empleado { get; set; }
+        public string Empresa { get; set; }
         public int Interno { get; set; }
         public string Apellido { get; set; }
         public string Nombres { get; set; }

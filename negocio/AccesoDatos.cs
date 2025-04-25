@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using dominio;
+using System.Security.AccessControl;
 
 
 namespace negocio
@@ -39,8 +40,11 @@ namespace negocio
 
             try
             {
-                conexion.Open();
-                lector = comando.ExecuteReader();
+                if (conexion.State == System.Data.ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
+                    lector = comando.ExecuteReader();
             }
             catch (Exception ex)
             {
@@ -62,6 +66,45 @@ namespace negocio
                 throw ex;
             }
         } // Escribir consulta - query desde la app a BD
+
+        public string buscarPuesto(int idPuesto)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            string queryPuesto = "SELECT nombre FROM cantarini_control.dbo.puestos WHERE idPuesto = " + idPuesto + ";";
+            string nombrePuesto;
+            datos.setearConsulta(queryPuesto);
+            datos.ejecutarLectura();
+
+            if (datos.Lector.Read())
+            {
+                nombrePuesto = (string)datos.Lector["nombre"];
+            }
+            else
+            {
+                nombrePuesto = "";
+            }
+                return nombrePuesto;
+        }
+
+        public string buscarEmpresa(int idEmpresa)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            string queryEmpresa = "SELECT nombre FROM cantarini_control.dbo.empresas WHERE idEmpresa=" + idEmpresa + ";";
+            string nombreEmpresa;
+            datos.setearConsulta(queryEmpresa);
+            datos.ejecutarLectura();
+
+            if (datos.Lector.Read())
+            {
+                nombreEmpresa = (string)datos.Lector["nombre"];
+            }
+            else
+            {
+                nombreEmpresa = "";
+            }
+
+            return nombreEmpresa;
+        }
 
         public SqlDataReader Lector
         {
