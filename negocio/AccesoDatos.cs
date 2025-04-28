@@ -86,6 +86,25 @@ namespace negocio
                 return nombrePuesto;
         }
 
+        public int buscarIdPuesto(string nombrePuesto)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            string queryPuesto = "SELECT idPuesto FROM cantarini_control.dbo.puestos WHERE nombre = " + nombrePuesto + ";";
+            int idPuesto;
+            datos.setearConsulta(queryPuesto);
+            datos.ejecutarLectura();
+
+            if (datos.Lector.Read())
+            {
+                idPuesto = (int)datos.Lector["idPuesto"];
+            }
+            else
+            {
+                idPuesto = 0;
+            }
+            return idPuesto;
+        }
+
         public string buscarEmpresa(int idEmpresa)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -104,6 +123,27 @@ namespace negocio
             }
 
             return nombreEmpresa;
+        }
+
+        public int buscarIdEmpresa(string nombreEmpresa)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+            string queryEmpresa = "SELECT idEmpresa FROM cantarini_control.dbo.empresas WHERE nombre=" + nombreEmpresa + ";";
+            int idEmpresa;
+            datos.setearConsulta(queryEmpresa);
+            datos.ejecutarLectura();
+
+            if (datos.Lector.Read())
+            {
+                idEmpresa = (int)datos.Lector["idEmpresa"];
+            }
+            else
+            {
+                idEmpresa = 0;
+            }
+
+            return idEmpresa;
         }
 
         public SqlDataReader Lector

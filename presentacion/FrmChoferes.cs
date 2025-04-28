@@ -51,5 +51,35 @@ namespace presentacion
             FrmModificarChofer modificar = new FrmModificarChofer(seleccion);
             modificar.Show();
         }
+
+        private void filtrarChoferes()
+        {
+            List<Persona> listaFiltrada;
+            string filtro = tbxChoferesFiltro.Text;
+
+            if (filtro != "")
+            {
+                // filtra por dni, apellido y/o nombres.
+                listaFiltrada = listadoChoferes.FindAll(ev => ev.Dni.ToString().Contains(filtro.ToUpper()) || ev.Apellido.ToString().Contains(filtro.ToUpper()) || ev.Nombres.ToString().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                // si el filtro esta en blanco, devuelve la lista total
+                listaFiltrada = listadoChoferes;
+            }
+
+            dgvChoferes.DataSource = null; // vaciarla primero para pisarla desp
+            dgvChoferes.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            filtrarChoferes();
+        }
+
+        private void tbxChoferesFiltro_Enter(object sender, EventArgs e)
+        {
+            filtrarChoferes();
+        }
     }
 }

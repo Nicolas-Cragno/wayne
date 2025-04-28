@@ -33,6 +33,7 @@
             this.tbxChoferesFiltro = new System.Windows.Forms.TextBox();
             this.dgvChoferes = new System.Windows.Forms.DataGridView();
             this.btnChoferesNuevo = new System.Windows.Forms.Button();
+            this.BtnChoferesFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChoferes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             this.lblChoferesFiltro.AutoSize = true;
             this.lblChoferesFiltro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoferesFiltro.Location = new System.Drawing.Point(226, 85);
+            this.lblChoferesFiltro.Location = new System.Drawing.Point(161, 84);
             this.lblChoferesFiltro.Name = "lblChoferesFiltro";
             this.lblChoferesFiltro.Size = new System.Drawing.Size(34, 12);
             this.lblChoferesFiltro.TabIndex = 1;
@@ -58,10 +59,11 @@
             // 
             // tbxChoferesFiltro
             // 
-            this.tbxChoferesFiltro.Location = new System.Drawing.Point(266, 81);
+            this.tbxChoferesFiltro.Location = new System.Drawing.Point(201, 80);
             this.tbxChoferesFiltro.Name = "tbxChoferesFiltro";
             this.tbxChoferesFiltro.Size = new System.Drawing.Size(224, 20);
             this.tbxChoferesFiltro.TabIndex = 2;
+            this.tbxChoferesFiltro.Enter += new System.EventHandler(this.tbxChoferesFiltro_Enter);
             // 
             // dgvChoferes
             // 
@@ -82,11 +84,22 @@
             this.btnChoferesNuevo.Text = "Nuevo Chofer";
             this.btnChoferesNuevo.UseVisualStyleBackColor = true;
             // 
+            // BtnChoferesFiltro
+            // 
+            this.BtnChoferesFiltro.Location = new System.Drawing.Point(431, 78);
+            this.BtnChoferesFiltro.Name = "BtnChoferesFiltro";
+            this.BtnChoferesFiltro.Size = new System.Drawing.Size(59, 23);
+            this.BtnChoferesFiltro.TabIndex = 5;
+            this.BtnChoferesFiltro.Text = "Buscar";
+            this.BtnChoferesFiltro.UseVisualStyleBackColor = true;
+            this.BtnChoferesFiltro.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmChoferes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 422);
+            this.Controls.Add(this.BtnChoferesFiltro);
             this.Controls.Add(this.btnChoferesNuevo);
             this.Controls.Add(this.dgvChoferes);
             this.Controls.Add(this.tbxChoferesFiltro);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.TextBox tbxChoferesFiltro;
         private System.Windows.Forms.DataGridView dgvChoferes;
         private System.Windows.Forms.Button btnChoferesNuevo;
+        private System.Windows.Forms.Button BtnChoferesFiltro;
     }
 }
