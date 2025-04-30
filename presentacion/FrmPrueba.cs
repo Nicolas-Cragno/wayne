@@ -4,27 +4,17 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
-using negocio;
 
 namespace presentacion
 {
-    public partial class FrmAgregarChofer : Form
+    public partial class FrmPrueba : Form
     {
-        public FrmAgregarChofer()
+        public FrmPrueba()
         {
             InitializeComponent();
         }
-
-        private void FrmAgregarChofer_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }

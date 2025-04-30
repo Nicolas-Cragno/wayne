@@ -9,19 +9,19 @@ namespace dominio
     public class Tractores
     {
         public int Interno { get; set; }
-        public int Empresa { get; set; }
-        public int Satelital_Ubicacion { get; set; }
-        public int Satelital_Combustible {  get; set; }
-        public int Chofer {  get; set; }
+        public string Empresa { get; set; } //convertir a int para buscar cod en db
+        public string Satelital_Ubicacion { get; set; }  //convertir a int para buscar cod en db
+        public string Satelital_Combustible {  get; set; }  //convertir a int para buscar cod en db
+        public string Chofer {  get; set; }
         public string Dominio { get; set; }
         public string Modelo { get; set; }
         public string Marca { get; set; }
-        public bool Activo { get; set; }
         public string Observaciones {  get; set; }
-        public bool OK_Taller { get; set; }
-        public bool OK_Adm {  get; set; }
-        public bool OK_Satelital { get; set; }
-        public bool OK_Trafico {  get; set; }
+        public int Activo { get; set; }
+        public int OK_Taller { get; set; }
+        public int OK_Adm {  get; set; }
+        public int OK_Satelital { get; set; }
+        public int OK_Trafico {  get; set; }
 
     }
 }

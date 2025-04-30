@@ -81,5 +81,12 @@ namespace presentacion
         {
             filtrarChoferes();
         }
+
+        private void btnChoferesNuevo_Click(object sender, EventArgs e)
+        {
+            FrmAgregarChofer ventana = new FrmAgregarChofer();
+            ventana.ShowDialog();
+
+        }
     }
 }

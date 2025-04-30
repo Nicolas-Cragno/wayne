@@ -45,6 +45,7 @@
             this.lblModificarChoferTitulo = new System.Windows.Forms.Label();
             this.cbxModificarChoferActivo = new System.Windows.Forms.CheckBox();
             this.tbxModificarChoferEmpresa = new System.Windows.Forms.TextBox();
+            this.lblModificarChoferSubtitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnModificarChofer
@@ -170,11 +171,12 @@
             // 
             this.lblModificarChoferTitulo.AutoSize = true;
             this.lblModificarChoferTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModificarChoferTitulo.Location = new System.Drawing.Point(72, 28);
+            this.lblModificarChoferTitulo.Location = new System.Drawing.Point(93, 9);
             this.lblModificarChoferTitulo.Name = "lblModificarChoferTitulo";
-            this.lblModificarChoferTitulo.Size = new System.Drawing.Size(236, 18);
+            this.lblModificarChoferTitulo.Size = new System.Drawing.Size(194, 18);
             this.lblModificarChoferTitulo.TabIndex = 20;
-            this.lblModificarChoferTitulo.Text = "DNI - APELLIDO Y NOMBRES";
+            this.lblModificarChoferTitulo.Text = "APELLIDO Y NOMBRES";
+            this.lblModificarChoferTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbxModificarChoferActivo
             // 
@@ -193,11 +195,23 @@
             this.tbxModificarChoferEmpresa.Size = new System.Drawing.Size(147, 20);
             this.tbxModificarChoferEmpresa.TabIndex = 28;
             // 
+            // lblModificarChoferSubtitulo
+            // 
+            this.lblModificarChoferSubtitulo.AutoSize = true;
+            this.lblModificarChoferSubtitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModificarChoferSubtitulo.Location = new System.Drawing.Point(172, 27);
+            this.lblModificarChoferSubtitulo.Name = "lblModificarChoferSubtitulo";
+            this.lblModificarChoferSubtitulo.Size = new System.Drawing.Size(37, 18);
+            this.lblModificarChoferSubtitulo.TabIndex = 43;
+            this.lblModificarChoferSubtitulo.Text = "DNI";
+            this.lblModificarChoferSubtitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmModificarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 375);
+            this.Controls.Add(this.lblModificarChoferSubtitulo);
             this.Controls.Add(this.cbxModificarChoferActivo);
             this.Controls.Add(this.btnModificarChofer);
             this.Controls.Add(this.cbxModificarChoferTrafico);
@@ -242,5 +256,6 @@
         private System.Windows.Forms.Label lblModificarChoferTitulo;
         private System.Windows.Forms.CheckBox cbxModificarChoferActivo;
         private System.Windows.Forms.TextBox tbxModificarChoferEmpresa;
+        private System.Windows.Forms.Label lblModificarChoferSubtitulo;
     }
 }

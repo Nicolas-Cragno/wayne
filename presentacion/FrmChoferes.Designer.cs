@@ -83,6 +83,7 @@
             this.btnChoferesNuevo.TabIndex = 4;
             this.btnChoferesNuevo.Text = "Nuevo Chofer";
             this.btnChoferesNuevo.UseVisualStyleBackColor = true;
+            this.btnChoferesNuevo.Click += new System.EventHandler(this.btnChoferesNuevo_Click);
             // 
             // BtnChoferesFiltro
             // 

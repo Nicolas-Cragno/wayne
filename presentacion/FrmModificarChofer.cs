@@ -28,18 +28,22 @@ namespace presentacion
                 string apellido = chofer.Apellido;
                 string nombres = chofer.Nombres;
 
-                lblModificarChoferTitulo.Text = dni + " - " + apellido + ", " + nombres;
+                lblModificarChoferTitulo.Text =  apellido + ", " + nombres;
+                lblModificarChoferSubtitulo.Text = dni;
                 tbxModificarChoferApellido.Text = apellido;
                 tbxModificarChoferNombre.Text = nombres;
-                tbxModificarChoferTipo.Text = chofer.Tipo_Empleado.ToString();
-                tbxModificarChoferEmpresa.Text = chofer.Empresa.ToString();
                 tbxModificarChoferInterno.Text = chofer.Interno.ToString();
                 tbxModificarChoferObservaciones.Text = chofer.Observaciones;
+                tbxModificarChoferTipo.Text = chofer.Tipo_Empleado.ToString();
+
                 cbxModificarChoferADM.Checked = chofer.OK_Adm; //bool
                 cbxModificarChoferTrafico.Checked = chofer.OK_Trafico; //bool
                 cbxModificarChoferActivo.Checked = chofer.Activo; //bool
+                /*
+                tbxModificarChoferEmpresa.Text = chofer.Empresa.ToString();
+                */
 
-            } 
+            }
         }
     }
 }

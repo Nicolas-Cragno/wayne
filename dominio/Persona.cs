@@ -22,5 +22,6 @@ namespace dominio
         public bool OK_Adm {  get; set; }
         public bool OK_Trafico { get; set; }
         public DateTime Ingreso { get; set; }
+
     }
 }

@@ -54,6 +54,7 @@
             this.btnTractores.TabIndex = 1;
             this.btnTractores.Text = "TRACTORES";
             this.btnTractores.UseVisualStyleBackColor = true;
+            this.btnTractores.Click += new System.EventHandler(this.btnTractores_Click);
             // 
             // btnEventos
             // 
@@ -64,6 +65,7 @@
             this.btnEventos.TabIndex = 2;
             this.btnEventos.Text = "EVENTOS";
             this.btnEventos.UseVisualStyleBackColor = true;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
             // btnMovimientos
             // 
@@ -74,6 +76,7 @@
             this.btnMovimientos.TabIndex = 3;
             this.btnMovimientos.Text = "MOVIMIENTOS";
             this.btnMovimientos.UseVisualStyleBackColor = true;
+            this.btnMovimientos.Click += new System.EventHandler(this.btnMovimientos_Click);
             // 
             // FrmPrincipal
             // 
@@ -86,6 +89,7 @@
             this.Controls.Add(this.btnChoferes);
             this.Name = "FrmPrincipal";
             this.Text = "Wayne Control";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.ResumeLayout(false);
 
         }

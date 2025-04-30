@@ -22,5 +22,24 @@ namespace presentacion
             FrmChoferes ventana = new FrmChoferes();
             ventana.ShowDialog();
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTractores_Click(object sender, EventArgs e)
+        {
+            FrmPrueba ventana = new FrmPrueba();
+            ventana.ShowDialog();
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnMovimientos_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
