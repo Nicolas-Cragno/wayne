@@ -61,11 +61,11 @@ namespace presentacion
                 modifChofer.Empresa = (string)tbxModificarChoferEmpresa.Text.ToUpper(); // es int (en la formula de agregar se pasa)
                 modifChofer.Interno = int.Parse(tbxModificarChoferInterno.Text);
                 modifChofer.Observaciones = (string)tbxModificarChoferObservaciones.Text.ToUpper();
-                
-                /*
                 modifChofer.Activo = cbxModificarChoferActivo.Checked;
                 modifChofer.OK_Adm = cbxModificarChoferADM.Checked;
                 modifChofer.OK_Trafico = cbxModificarChoferTrafico.Checked;
+                
+                /*
                 */
 
                 negocio.modificar(modifChofer);

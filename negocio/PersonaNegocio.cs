@@ -92,16 +92,15 @@ namespace negocio
 
             int idPuesto = datos.buscarIdPuesto(mdCh.Tipo_Empleado);
             int idEmpresa = datos.buscarIdEmpresa(mdCh.Empresa);
-            /*
             int activo = datos.numerarBool(mdCh.Activo);
             int okAdm = datos.numerarBool(mdCh.OK_Adm);
             int okTrafico = datos.numerarBool(mdCh.OK_Trafico);
+            /*
             */
 
             try
             {
-                datos.setearConsulta("UPDATE cantarini_control.dbo.personas SET idPuesto=" + idPuesto + ", idEmpresa= " + idEmpresa + ", interno= " + mdCh.Interno + ", apellido='" + mdCh.Apellido + "', nombres='" + mdCh.Nombres + "', Observaciones='" + mdCh.Observaciones + "' WHERE dni=" + mdCh.Dni + ";");
-                //datos.setearConsulta("UPDATE cantarini_control.dbo.personas SET idPuesto=" + idPuesto + ", idEmpresa= " + idEmpresa + ", interno= " + mdCh.Ingreso + ", apellido='" + mdCh.Apellido + "', nombres='" + mdCh.Nombres + "', Observaciones='" + mdCh.Observaciones + ", ' activo=" + activo + ", okAdm= " + okAdm + ", okTrafico=" + okTrafico + " WHERE dni='" + mdCh.Dni + "';");
+                datos.setearConsulta("UPDATE cantarini_control.dbo.personas SET idPuesto=" + idPuesto + ", idEmpresa= " + idEmpresa + ", interno= " + mdCh.Interno + ", apellido='" + mdCh.Apellido + "', nombres='" + mdCh.Nombres + "', Observaciones='" + mdCh.Observaciones + "', activo=" + activo + ", okAdm=" + okAdm + ", okTrafico=" + okTrafico + " WHERE dni=" + mdCh.Dni + ";");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
