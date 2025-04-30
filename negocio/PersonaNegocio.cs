@@ -39,15 +39,15 @@ namespace negocio
                     auxChofer.Viajes = (int)datos.Lector["viajes"];
                     auxChofer.Ingreso = (DateTime)datos.Lector["ingreso"];
                     auxChofer.Observaciones = (string)datos.Lector["Observaciones"].ToString(); // Puede llegar a devolver NULL.
-
+                    int auxEmpresa = (int)datos.Lector["idEmpresa"]; // dispara error
+                    auxChofer.Empresa = datos.buscarEmpresa(auxEmpresa);  // dispara error
+                    
                     int auxPuesto = (int)datos.Lector["idPuesto"];
                     auxChofer.Tipo_Empleado = datos.buscarPuesto(auxPuesto);
                     auxChofer.Activo = (bool)datos.Lector["activo"];
                     auxChofer.OK_Adm = (bool)datos.Lector["okAdm"];
                     auxChofer.OK_Trafico = (bool)datos.Lector["okTrafico"];
                     /*
-                    int auxEmpresa = (int)datos.Lector["idEmpresa"]; // dispara error
-                    auxChofer.Empresa = datos.buscarEmpresa(auxEmpresa);  // dispara error
                     auxChofer.Promedio = (float)datos.Lector["promedio"]; // dispara el error
                     */
                     
@@ -66,8 +66,40 @@ namespace negocio
             }
         }
 
-        public void agregar(Persona nvCh) { }
+        public void agregar(Persona nvCh) 
+        {
+            AccesoDatos datos = new AccesoDatos();
 
-        public void modificar(Persona mdCh) { }
+            int idPuesto = datos.buscarIdPuesto(nvCh.Tipo_Empleado);
+            int idEmpresa = datos.buscarIdEmpresa(nvCh.Empresa);
+
+            try
+            {
+               //datos.setearConsulta("INSERT INTO cantarini_control.dbo.personas (dni, idPuesto, idEmpresa, interno, apellido, nombres, ingreso, Observaciones) VALUES (39345602, 0, 0, 0, 'CRAGNO', 'NICOLAS LAUTARO', convert(date, getdate()), 'PRUEBA');");
+               datos.setearConsulta("INSERT INTO cantarini_control.dbo.personas (dni, idPuesto, idEmpresa, interno, apellido, nombres, ingreso, Observaciones) VALUES (" + nvCh.Dni + ", " + idPuesto + ", " + idEmpresa + ", " + nvCh.Interno + ", '" + nvCh.Apellido + "', '" + nvCh.Nombres + "', convert(date, getdate()), '" + nvCh.Observaciones + "');");
+               datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion();}
+        }
+
+        public void modificar(Persona mdCh) 
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                //datos.setearConsulta("");
+                //datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally{ datos.cerrarConexion();}
+        }
     }
 }

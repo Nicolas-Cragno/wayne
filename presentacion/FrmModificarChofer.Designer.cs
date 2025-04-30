@@ -56,6 +56,7 @@
             this.btnModificarChofer.TabIndex = 39;
             this.btnModificarChofer.Text = "Guardar";
             this.btnModificarChofer.UseVisualStyleBackColor = true;
+            this.btnModificarChofer.Click += new System.EventHandler(this.btnModificarChofer_Click);
             // 
             // cbxModificarChoferTrafico
             // 

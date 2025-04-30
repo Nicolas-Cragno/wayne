@@ -24,8 +24,8 @@ namespace negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection(cadenaConexion);
-            comando = new SqlCommand();
+                conexion = new SqlConnection(cadenaConexion);
+                comando = new SqlCommand();
         } // iniciar conexión a base de datos
 
         public void setearConsulta(string consulsta)
@@ -44,7 +44,7 @@ namespace negocio
                 {
                     conexion.Open();
                 }
-                lector = comando.ExecuteReader();
+                    lector = comando.ExecuteReader();
             }
             catch (Exception ex)
             {
@@ -130,6 +130,20 @@ namespace negocio
 
         public string buscarEmpresa(int idEmpresa)
         {
+            string nombreEmpresa;
+
+            switch (idEmpresa)
+            {
+                case 1: nombreEmpresa = "TRANSPORTES CANTARINI";
+                    break;
+                case 2: nombreEmpresa = "TRANSAMERICA TRANSPORTES";
+                    break;
+                case 3: nombreEmpresa = "EXPRESO CANTARINI";
+                    break;
+                default: nombreEmpresa = "NO REGISTRADO";
+                    break;
+            }
+            /*  busqueda por DB que trae error
             AccesoDatos datos = new AccesoDatos();
             string queryEmpresa = "SELECT nombre FROM cantarini_control.dbo.empresas WHERE idEmpresa=" + idEmpresa + ";";
             string nombreEmpresa;
@@ -144,7 +158,7 @@ namespace negocio
             {
                 nombreEmpresa = "";
             }
-
+            */
             return nombreEmpresa;
         }
 

@@ -54,6 +54,7 @@
             this.btnAgregarChofer.TabIndex = 57;
             this.btnAgregarChofer.Text = "Agregar";
             this.btnAgregarChofer.UseVisualStyleBackColor = true;
+            this.btnAgregarChofer.Click += new System.EventHandler(this.btnAgregarChofer_Click);
             // 
             // tbxAgregarChoferObservaciones
             // 

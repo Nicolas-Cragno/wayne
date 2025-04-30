@@ -34,6 +34,7 @@
             this.dgvChoferes = new System.Windows.Forms.DataGridView();
             this.btnChoferesNuevo = new System.Windows.Forms.Button();
             this.BtnChoferesFiltro = new System.Windows.Forms.Button();
+            this.btnChoferesClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChoferes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             this.lblChoferesFiltro.AutoSize = true;
             this.lblChoferesFiltro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoferesFiltro.Location = new System.Drawing.Point(161, 84);
+            this.lblChoferesFiltro.Location = new System.Drawing.Point(36, 85);
             this.lblChoferesFiltro.Name = "lblChoferesFiltro";
             this.lblChoferesFiltro.Size = new System.Drawing.Size(34, 12);
             this.lblChoferesFiltro.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             // tbxChoferesFiltro
             // 
-            this.tbxChoferesFiltro.Location = new System.Drawing.Point(201, 80);
+            this.tbxChoferesFiltro.Location = new System.Drawing.Point(76, 81);
             this.tbxChoferesFiltro.Name = "tbxChoferesFiltro";
             this.tbxChoferesFiltro.Size = new System.Drawing.Size(224, 20);
             this.tbxChoferesFiltro.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             // btnChoferesNuevo
             // 
-            this.btnChoferesNuevo.Location = new System.Drawing.Point(398, 376);
+            this.btnChoferesNuevo.Location = new System.Drawing.Point(398, 78);
             this.btnChoferesNuevo.Name = "btnChoferesNuevo";
             this.btnChoferesNuevo.Size = new System.Drawing.Size(92, 23);
             this.btnChoferesNuevo.TabIndex = 4;
@@ -87,7 +88,7 @@
             // 
             // BtnChoferesFiltro
             // 
-            this.BtnChoferesFiltro.Location = new System.Drawing.Point(431, 78);
+            this.BtnChoferesFiltro.Location = new System.Drawing.Point(306, 79);
             this.BtnChoferesFiltro.Name = "BtnChoferesFiltro";
             this.BtnChoferesFiltro.Size = new System.Drawing.Size(59, 23);
             this.BtnChoferesFiltro.TabIndex = 5;
@@ -95,11 +96,22 @@
             this.BtnChoferesFiltro.UseVisualStyleBackColor = true;
             this.BtnChoferesFiltro.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnChoferesClose
+            // 
+            this.btnChoferesClose.Location = new System.Drawing.Point(439, 376);
+            this.btnChoferesClose.Name = "btnChoferesClose";
+            this.btnChoferesClose.Size = new System.Drawing.Size(51, 23);
+            this.btnChoferesClose.TabIndex = 6;
+            this.btnChoferesClose.Text = "Cerrar";
+            this.btnChoferesClose.UseVisualStyleBackColor = true;
+            this.btnChoferesClose.Click += new System.EventHandler(this.btnChoferesClose_Click);
+            // 
             // FrmChoferes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 422);
+            this.Controls.Add(this.btnChoferesClose);
             this.Controls.Add(this.BtnChoferesFiltro);
             this.Controls.Add(this.btnChoferesNuevo);
             this.Controls.Add(this.dgvChoferes);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.DataGridView dgvChoferes;
         private System.Windows.Forms.Button btnChoferesNuevo;
         private System.Windows.Forms.Button BtnChoferesFiltro;
+        private System.Windows.Forms.Button btnChoferesClose;
     }
 }

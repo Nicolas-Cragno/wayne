@@ -35,10 +35,10 @@ namespace presentacion
 
         private void FrmChoferes_Load(object sender, EventArgs e)
         {
-            PersonaNegocio negocio = new PersonaNegocio();
-            listadoChoferes = negocio.listarChoferes();
-            dgvChoferes.DataSource = listadoChoferes;
-            ocultarColumnas();
+                PersonaNegocio negocio = new PersonaNegocio();
+                listadoChoferes = negocio.listarChoferes();
+                dgvChoferes.DataSource = listadoChoferes;
+                ocultarColumnas();
         }
 
         private void dgvChoferes_CellContentClick(object sender, DataGridViewCellEventArgs e){}
@@ -88,5 +88,10 @@ namespace presentacion
             ventana.ShowDialog();
 
         }
+        private void btnChoferesClose_Click(object sender, EventArgs e)
+        {
+            Close();            
+        }
+
     }
 }

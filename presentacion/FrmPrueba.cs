@@ -16,5 +16,10 @@ namespace presentacion
         {
             InitializeComponent();
         }
+
+        private void FrmPrueba_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

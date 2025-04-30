@@ -48,6 +48,7 @@
             this.Controls.Add(this.lblPrueba);
             this.Name = "FrmPrueba";
             this.Text = "FrmPrueba";
+            this.Load += new System.EventHandler(this.FrmPrueba_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

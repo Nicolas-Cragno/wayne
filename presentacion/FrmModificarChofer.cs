@@ -35,15 +35,20 @@ namespace presentacion
                 tbxModificarChoferInterno.Text = chofer.Interno.ToString();
                 tbxModificarChoferObservaciones.Text = chofer.Observaciones;
                 tbxModificarChoferTipo.Text = chofer.Tipo_Empleado.ToString();
+                tbxModificarChoferEmpresa.Text = chofer.Empresa.ToString();
 
                 cbxModificarChoferADM.Checked = chofer.OK_Adm; //bool
                 cbxModificarChoferTrafico.Checked = chofer.OK_Trafico; //bool
                 cbxModificarChoferActivo.Checked = chofer.Activo; //bool
                 /*
-                tbxModificarChoferEmpresa.Text = chofer.Empresa.ToString();
                 */
 
             }
+        }
+
+        private void btnModificarChofer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
