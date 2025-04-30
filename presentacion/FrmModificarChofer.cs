@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using negocio;
 
 namespace presentacion
 {
@@ -48,7 +49,33 @@ namespace presentacion
 
         private void btnModificarChofer_Click(object sender, EventArgs e)
         {
+            Persona modifChofer = new Persona();
+            PersonaNegocio negocio = new PersonaNegocio();
 
+            try
+            {
+                modifChofer.Dni = int.Parse(lblModificarChoferSubtitulo.Text);
+                modifChofer.Apellido = (string)tbxModificarChoferApellido.Text.ToUpper();
+                modifChofer.Nombres = (string)tbxModificarChoferNombre.Text.ToUpper();
+                modifChofer.Tipo_Empleado = (string)tbxModificarChoferTipo.Text.ToUpper(); // es int (en la formula de agregar se pasa)
+                modifChofer.Empresa = (string)tbxModificarChoferEmpresa.Text.ToUpper(); // es int (en la formula de agregar se pasa)
+                modifChofer.Interno = int.Parse(tbxModificarChoferInterno.Text);
+                modifChofer.Observaciones = (string)tbxModificarChoferObservaciones.Text.ToUpper();
+                
+                /*
+                modifChofer.Activo = cbxModificarChoferActivo.Checked;
+                modifChofer.OK_Adm = cbxModificarChoferADM.Checked;
+                modifChofer.OK_Trafico = cbxModificarChoferTrafico.Checked;
+                */
+
+                negocio.modificar(modifChofer);
+                MessageBox.Show("Datos actualizados.");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
