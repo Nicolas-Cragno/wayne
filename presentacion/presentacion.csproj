@@ -46,28 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAgregarChofer.cs">
+    <Compile Include="Choferes\FrmAgregarChofer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAgregarChofer.Designer.cs">
+    <Compile Include="Choferes\FrmAgregarChofer.Designer.cs">
       <DependentUpon>FrmAgregarChofer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmChoferes.cs">
+    <Compile Include="Choferes\FrmChoferes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmChoferes.Designer.cs">
+    <Compile Include="Choferes\FrmChoferes.Designer.cs">
       <DependentUpon>FrmChoferes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFichaChofer.cs">
+    <Compile Include="Choferes\FrmFichaChofer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFichaChofer.Designer.cs">
+    <Compile Include="Choferes\FrmFichaChofer.Designer.cs">
       <DependentUpon>FrmFichaChofer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmModificarChofer.cs">
+    <Compile Include="Choferes\FrmModificarChofer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmModificarChofer.Designer.cs">
+    <Compile Include="Choferes\FrmModificarChofer.Designer.cs">
       <DependentUpon>FrmModificarChofer.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
@@ -84,16 +84,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAgregarChofer.resx">
+    <Compile Include="Tractores\FrmAgregarTractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tractores\FrmAgregarTractor.Designer.cs">
+      <DependentUpon>FrmAgregarTractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tractores\FrmTractores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tractores\FrmTractores.Designer.cs">
+      <DependentUpon>FrmTractores.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Choferes\FrmAgregarChofer.resx">
       <DependentUpon>FrmAgregarChofer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmChoferes.resx">
+    <EmbeddedResource Include="Choferes\FrmChoferes.resx">
       <DependentUpon>FrmChoferes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFichaChofer.resx">
+    <EmbeddedResource Include="Choferes\FrmFichaChofer.resx">
       <DependentUpon>FrmFichaChofer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmModificarChofer.resx">
+    <EmbeddedResource Include="Choferes\FrmModificarChofer.resx">
       <DependentUpon>FrmModificarChofer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
@@ -111,6 +123,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tractores\FrmTractores.resx">
+      <DependentUpon>FrmTractores.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

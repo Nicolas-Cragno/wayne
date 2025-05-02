@@ -12,9 +12,9 @@ namespace negocio
     {
         const string db_tractores = "cantarini_control.dbo.tractores";
 
-        public List<Tractores> listarTractores()
+        public List<Tractor> listarTractores()
         {
-            List<Tractores> listaTractores = new List<Tractores>();
+            List<Tractor> listaTractores = new List<Tractor>();
             AccesoDatos datos = new AccesoDatos();
 
             string camposListaTractores = "SELECT interno, idEmpresa, idSat_Ub, idSat_Cb, dni, dominio, modelo, marca, activo, observaciones, okTaller, okAdm, okSat, okTrafico";
@@ -28,25 +28,32 @@ namespace negocio
 
                 while (datos.Lector.Read())
                 {
-                    Tractores auxTractor = new Tractores();
+                    Tractor auxTractor = new Tractor();
+
                     auxTractor.Interno = (int)datos.Lector["interno"];
                     int auxEmpresa = (int)datos.Lector["idEmpresa"];
                     auxTractor.Empresa = datos.buscarEmpresa(auxEmpresa);
+                    auxTractor.Dominio = (string)datos.Lector["dominio"];
+                    auxTractor.Modelo = (string)datos.Lector["modelo"].ToString();
+                    auxTractor.Marca = (string)datos.Lector["marca"].ToString();
+                    auxTractor.Activo = (bool)datos.Lector["activo"];
+                    auxTractor.Observaciones = (string)datos.Lector["observaciones"].ToString();
+                    auxTractor.OK_Taller = (bool)datos.Lector["okTaller"];
+                    auxTractor.OK_Adm = (bool)datos.Lector["okAdm"];
+                    auxTractor.OK_Satelital = (bool)datos.Lector["okSat"];
+                    auxTractor.OK_Trafico = (bool)datos.Lector["okTrafico"];
+                    if (!(datos.Lector["dni"] is DBNull))
+                    {
+                        int auxDni = (int)datos.Lector["dni"];
+                        auxTractor.Chofer = datos.buscarChofer(auxDni);
+                    }
                     int auxSatUb = (int)datos.Lector["idSat_Ub"];
                     auxTractor.Satelital_Ubicacion = datos.buscarSatUb(auxSatUb);
                     int auxSatCb = (int)datos.Lector["idSat_Cb"];
                     auxTractor.Satelital_Combustible = datos.buscarSatCb(auxSatCb);
-                    int auxChofer = (int)datos.Lector["dni"];
-                    auxTractor.Chofer = datos.buscarChofer(auxChofer);
-                    auxTractor.Dominio = (string)datos.Lector["dominio"];
-                    auxTractor.Modelo = (string)datos.Lector["modelo"];
-                    auxTractor.Marca = (string)datos.Lector["marca"];
-                    auxTractor.Activo = (int)datos.Lector["activo"];
-                    auxTractor.OK_Taller = (int)datos.Lector["okTaller"];
-                    auxTractor.OK_Adm = (int)datos.Lector["okAdm"];
-                    auxTractor.OK_Satelital = (int)datos.Lector["okSat"];
-                    auxTractor.OK_Trafico = (int)datos.Lector["okTrafico"];
-                
+
+
+
                     listaTractores.Add(auxTractor);
                 }
 
@@ -94,8 +101,8 @@ namespace negocio
 
         }
 
-        public void agregar(Tractores nvTr) { }
+        public void agregar(Tractor nvTr) { }
 
-        public void modificar(Tractores mdTr) { }
+        public void modificar(Tractor mdTr) { }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using presentacion.Tractores;
 
 namespace presentacion
 {
@@ -30,7 +31,8 @@ namespace presentacion
 
         private void btnTractores_Click(object sender, EventArgs e)
         {
-            FrmPrueba ventana = new FrmPrueba();
+            //FrmPrueba ventana = new FrmPrueba();
+            FrmTractores ventana = new FrmTractores();
             ventana.ShowDialog();
         }
 

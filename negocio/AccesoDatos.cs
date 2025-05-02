@@ -185,20 +185,20 @@ namespace negocio
 
         public string buscarSatUb(int idSat)
         {
-            AccesoDatos datos = new AccesoDatos();
-            string querySat = "SELECT nombre FROM cantarini_control.dbo.ubicacion_satelital WHERE idSat_Ub = " + idSat + ";";
             string nombreSat;
-            datos.setearConsulta(querySat);
-            datos.ejecutarLectura();
 
-            if (datos.Lector.Read())
+            switch (idSat)
             {
-                nombreSat = (string)datos.Lector["nombre"];
+                case 0: nombreSat = "SIN SATELITAL";
+                    break;
+                case 1: nombreSat = "MICHELIN";
+                    break;
+                case 2: nombreSat = "CARTRUCK";
+                    break;
+                default: nombreSat = "SIN SATELITAL";
+                    break;
             }
-            else
-            {
-                nombreSat = "SIN SATELITAL";
-            }
+            
 
             return nombreSat;
         }
@@ -225,20 +225,24 @@ namespace negocio
 
         public string buscarSatCb(int idSat)
         {
-            AccesoDatos datos = new AccesoDatos();
-            string querySat = "SELECT nombre FROM cantarini_control.dbo.combustible_satelital WHERE idSat_Cb = " + idSat + ";";
             string nombreSat;
-            datos.setearConsulta(querySat);
-            datos.ejecutarLectura();
 
-            if (datos.Lector.Read())
+            switch (idSat)
             {
-                nombreSat = (string)datos.Lector["nombre"];
+                case 0:
+                    nombreSat = "SIN SATELITAL";
+                    break;
+                case 1:
+                    nombreSat = "MICHELIN";
+                    break;
+                case 2:
+                    nombreSat = "SCANIA";
+                    break;
+                default:
+                    nombreSat = "SIN SATELITAL";
+                    break;
             }
-            else
-            {
-                nombreSat = "SIN SATELITAL";
-            }
+
 
             return nombreSat;
         }
