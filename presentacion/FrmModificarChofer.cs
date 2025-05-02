@@ -28,15 +28,23 @@ namespace presentacion
                 string dni = chofer.Dni.ToString();
                 string apellido = chofer.Apellido;
                 string nombres = chofer.Nombres;
+                PuestoNegocio puestoNegocio = new PuestoNegocio();
+                EmpresaNegocio empresaNegocio = new EmpresaNegocio();
+                TractorNegocio tractorNegocio = new TractorNegocio();
 
                 lblModificarChoferTitulo.Text =  apellido + ", " + nombres;
                 lblModificarChoferSubtitulo.Text = dni;
                 tbxModificarChoferApellido.Text = apellido;
                 tbxModificarChoferNombre.Text = nombres;
-                tbxModificarChoferInterno.Text = chofer.Interno.ToString();
                 tbxModificarChoferObservaciones.Text = chofer.Observaciones;
-                tbxModificarChoferTipo.Text = chofer.Tipo_Empleado.ToString();
-                tbxModificarChoferEmpresa.Text = chofer.Empresa.ToString();
+                cbxModificarChoferTipo.DataSource = puestoNegocio.listarPuestos();
+                cbxModificarChoferEmpresa.DataSource = empresaNegocio.listarEmpresas();
+                cbxModificarChoferInterno.DataSource = tractorNegocio.listarInternos();
+
+                cbxModificarChoferInterno.Text = chofer.Interno.ToString();
+                cbxModificarChoferTipo.Text = chofer.Tipo_Empleado.ToString();
+                cbxModificarChoferEmpresa.Text = chofer.Empresa.ToString();
+
 
                 cbxModificarChoferADM.Checked = chofer.OK_Adm; //bool
                 cbxModificarChoferTrafico.Checked = chofer.OK_Trafico; //bool
@@ -57,9 +65,9 @@ namespace presentacion
                 modifChofer.Dni = int.Parse(lblModificarChoferSubtitulo.Text);
                 modifChofer.Apellido = (string)tbxModificarChoferApellido.Text.ToUpper();
                 modifChofer.Nombres = (string)tbxModificarChoferNombre.Text.ToUpper();
-                modifChofer.Tipo_Empleado = (string)tbxModificarChoferTipo.Text.ToUpper(); // es int (en la formula de agregar se pasa)
-                modifChofer.Empresa = (string)tbxModificarChoferEmpresa.Text.ToUpper(); // es int (en la formula de agregar se pasa)
-                modifChofer.Interno = int.Parse(tbxModificarChoferInterno.Text);
+                modifChofer.Tipo_Empleado = (string)cbxModificarChoferTipo.Text.ToUpper(); // es int (en la formula de agregar se pasa)
+                modifChofer.Empresa = (string)cbxModificarChoferEmpresa.Text.ToUpper(); // es int (en la formula de agregar se pasa)
+                modifChofer.Interno = int.Parse(cbxModificarChoferInterno.Text);
                 modifChofer.Observaciones = (string)tbxModificarChoferObservaciones.Text.ToUpper();
                 modifChofer.Activo = cbxModificarChoferActivo.Checked;
                 modifChofer.OK_Adm = cbxModificarChoferADM.Checked;

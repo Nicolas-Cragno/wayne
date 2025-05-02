@@ -33,10 +33,8 @@
             this.cbxModificarChoferADM = new System.Windows.Forms.CheckBox();
             this.tbxModificarChoferObservaciones = new System.Windows.Forms.TextBox();
             this.lblModificarChoferObservaciones = new System.Windows.Forms.Label();
-            this.tbxModificarChoferInterno = new System.Windows.Forms.TextBox();
             this.lblModificarChoferInterno = new System.Windows.Forms.Label();
             this.lblModificarChoferEmpresa = new System.Windows.Forms.Label();
-            this.tbxModificarChoferTipo = new System.Windows.Forms.TextBox();
             this.lblModificarChoferTipo = new System.Windows.Forms.Label();
             this.tbxModificarChoferNombre = new System.Windows.Forms.TextBox();
             this.lblModificarChoferNombre = new System.Windows.Forms.Label();
@@ -44,8 +42,10 @@
             this.lblModificarChoferApellido = new System.Windows.Forms.Label();
             this.lblModificarChoferTitulo = new System.Windows.Forms.Label();
             this.cbxModificarChoferActivo = new System.Windows.Forms.CheckBox();
-            this.tbxModificarChoferEmpresa = new System.Windows.Forms.TextBox();
             this.lblModificarChoferSubtitulo = new System.Windows.Forms.Label();
+            this.cbxModificarChoferTipo = new System.Windows.Forms.ComboBox();
+            this.cbxModificarChoferEmpresa = new System.Windows.Forms.ComboBox();
+            this.cbxModificarChoferInterno = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnModificarChofer
@@ -95,13 +95,6 @@
             this.lblModificarChoferObservaciones.TabIndex = 35;
             this.lblModificarChoferObservaciones.Text = "Observaciones";
             // 
-            // tbxModificarChoferInterno
-            // 
-            this.tbxModificarChoferInterno.Location = new System.Drawing.Point(294, 142);
-            this.tbxModificarChoferInterno.Name = "tbxModificarChoferInterno";
-            this.tbxModificarChoferInterno.Size = new System.Drawing.Size(59, 20);
-            this.tbxModificarChoferInterno.TabIndex = 34;
-            // 
             // lblModificarChoferInterno
             // 
             this.lblModificarChoferInterno.AutoSize = true;
@@ -119,13 +112,6 @@
             this.lblModificarChoferEmpresa.Size = new System.Drawing.Size(47, 13);
             this.lblModificarChoferEmpresa.TabIndex = 27;
             this.lblModificarChoferEmpresa.Text = "empresa";
-            // 
-            // tbxModificarChoferTipo
-            // 
-            this.tbxModificarChoferTipo.Location = new System.Drawing.Point(96, 116);
-            this.tbxModificarChoferTipo.Name = "tbxModificarChoferTipo";
-            this.tbxModificarChoferTipo.Size = new System.Drawing.Size(257, 20);
-            this.tbxModificarChoferTipo.TabIndex = 26;
             // 
             // lblModificarChoferTipo
             // 
@@ -189,13 +175,6 @@
             this.cbxModificarChoferActivo.Text = "Activo";
             this.cbxModificarChoferActivo.UseVisualStyleBackColor = true;
             // 
-            // tbxModificarChoferEmpresa
-            // 
-            this.tbxModificarChoferEmpresa.Location = new System.Drawing.Point(96, 142);
-            this.tbxModificarChoferEmpresa.Name = "tbxModificarChoferEmpresa";
-            this.tbxModificarChoferEmpresa.Size = new System.Drawing.Size(147, 20);
-            this.tbxModificarChoferEmpresa.TabIndex = 28;
-            // 
             // lblModificarChoferSubtitulo
             // 
             this.lblModificarChoferSubtitulo.AutoSize = true;
@@ -207,11 +186,38 @@
             this.lblModificarChoferSubtitulo.Text = "DNI";
             this.lblModificarChoferSubtitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cbxModificarChoferTipo
+            // 
+            this.cbxModificarChoferTipo.FormattingEnabled = true;
+            this.cbxModificarChoferTipo.Location = new System.Drawing.Point(96, 116);
+            this.cbxModificarChoferTipo.Name = "cbxModificarChoferTipo";
+            this.cbxModificarChoferTipo.Size = new System.Drawing.Size(257, 21);
+            this.cbxModificarChoferTipo.TabIndex = 44;
+            // 
+            // cbxModificarChoferEmpresa
+            // 
+            this.cbxModificarChoferEmpresa.FormattingEnabled = true;
+            this.cbxModificarChoferEmpresa.Location = new System.Drawing.Point(96, 142);
+            this.cbxModificarChoferEmpresa.Name = "cbxModificarChoferEmpresa";
+            this.cbxModificarChoferEmpresa.Size = new System.Drawing.Size(147, 21);
+            this.cbxModificarChoferEmpresa.TabIndex = 45;
+            // 
+            // cbxModificarChoferInterno
+            // 
+            this.cbxModificarChoferInterno.FormattingEnabled = true;
+            this.cbxModificarChoferInterno.Location = new System.Drawing.Point(294, 142);
+            this.cbxModificarChoferInterno.Name = "cbxModificarChoferInterno";
+            this.cbxModificarChoferInterno.Size = new System.Drawing.Size(59, 21);
+            this.cbxModificarChoferInterno.TabIndex = 46;
+            // 
             // FrmModificarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 375);
+            this.Controls.Add(this.cbxModificarChoferInterno);
+            this.Controls.Add(this.cbxModificarChoferEmpresa);
+            this.Controls.Add(this.cbxModificarChoferTipo);
             this.Controls.Add(this.lblModificarChoferSubtitulo);
             this.Controls.Add(this.cbxModificarChoferActivo);
             this.Controls.Add(this.btnModificarChofer);
@@ -219,11 +225,8 @@
             this.Controls.Add(this.cbxModificarChoferADM);
             this.Controls.Add(this.tbxModificarChoferObservaciones);
             this.Controls.Add(this.lblModificarChoferObservaciones);
-            this.Controls.Add(this.tbxModificarChoferInterno);
             this.Controls.Add(this.lblModificarChoferInterno);
-            this.Controls.Add(this.tbxModificarChoferEmpresa);
             this.Controls.Add(this.lblModificarChoferEmpresa);
-            this.Controls.Add(this.tbxModificarChoferTipo);
             this.Controls.Add(this.lblModificarChoferTipo);
             this.Controls.Add(this.tbxModificarChoferNombre);
             this.Controls.Add(this.lblModificarChoferNombre);
@@ -245,10 +248,8 @@
         private System.Windows.Forms.CheckBox cbxModificarChoferADM;
         private System.Windows.Forms.TextBox tbxModificarChoferObservaciones;
         private System.Windows.Forms.Label lblModificarChoferObservaciones;
-        private System.Windows.Forms.TextBox tbxModificarChoferInterno;
         private System.Windows.Forms.Label lblModificarChoferInterno;
         private System.Windows.Forms.Label lblModificarChoferEmpresa;
-        private System.Windows.Forms.TextBox tbxModificarChoferTipo;
         private System.Windows.Forms.Label lblModificarChoferTipo;
         private System.Windows.Forms.TextBox tbxModificarChoferNombre;
         private System.Windows.Forms.Label lblModificarChoferNombre;
@@ -256,7 +257,9 @@
         private System.Windows.Forms.Label lblModificarChoferApellido;
         private System.Windows.Forms.Label lblModificarChoferTitulo;
         private System.Windows.Forms.CheckBox cbxModificarChoferActivo;
-        private System.Windows.Forms.TextBox tbxModificarChoferEmpresa;
         private System.Windows.Forms.Label lblModificarChoferSubtitulo;
+        private System.Windows.Forms.ComboBox cbxModificarChoferTipo;
+        private System.Windows.Forms.ComboBox cbxModificarChoferEmpresa;
+        private System.Windows.Forms.ComboBox cbxModificarChoferInterno;
     }
 }
