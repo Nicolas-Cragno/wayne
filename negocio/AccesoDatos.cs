@@ -75,19 +75,32 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             string queryChofer = "SELECT apellido, nombres FROM cantarini_control.dbo.personas WHERE dni = " + dni + ";";
             string nombreChofer;
-            datos.setearConsulta(queryChofer);
-            datos.ejecutarLectura();
 
-            if (datos.Lector.Read())
+            try
             {
-                nombreChofer = (string)datos.Lector["apellido"] + ", " + (string)datos.Lector["nombres"];
+                datos.setearConsulta(queryChofer);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    nombreChofer = (string)datos.Lector["apellido"] + ", " + (string)datos.Lector["nombres"];
+                }
+                else
+                {
+                    nombreChofer = "SIN CHOFER ASIGNADO";
+                }
+
+                return nombreChofer;
             }
-            else
+            catch (Exception ex)
             {
-                nombreChofer = "SIN CHOFER ASIGNADO";
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
 
-            return nombreChofer;
         }
 
         public string buscarPuesto(int idPuesto)
@@ -95,18 +108,23 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             string queryPuesto = "SELECT nombre FROM cantarini_control.dbo.puestos WHERE idPuesto = " + idPuesto + ";";
             string nombrePuesto;
-            datos.setearConsulta(queryPuesto);
-            datos.ejecutarLectura();
+            try
+            {
+                datos.setearConsulta(queryPuesto);
+                datos.ejecutarLectura();
 
-            if (datos.Lector.Read())
-            {
-                nombrePuesto = (string)datos.Lector["nombre"];
+                if (datos.Lector.Read())
+                {
+                    nombrePuesto = (string)datos.Lector["nombre"];
+                }
+                else
+                {
+                    nombrePuesto = "";
+                }
+                return nombrePuesto;
             }
-            else
-            {
-                nombrePuesto = "";
-            }
-            return nombrePuesto;
+            catch(Exception ex) { throw ex; }
+            finally {  datos.cerrarConexion();}
         }
 
         public int buscarIdPuesto(string nombrePuesto)
@@ -114,21 +132,26 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             string queryPuesto = "SELECT idPuesto FROM cantarini_control.dbo.puestos WHERE nombre = '" + nombrePuesto + "';";
             int idPuesto;
-            datos.setearConsulta(queryPuesto);
-            datos.ejecutarLectura();
+            try
+            {
+                datos.setearConsulta(queryPuesto);
+                datos.ejecutarLectura();
 
-            if (datos.Lector.Read())
-            {
-                idPuesto = (int)datos.Lector["idPuesto"];
+                if (datos.Lector.Read())
+                {
+                    idPuesto = (int)datos.Lector["idPuesto"];
+                }
+                else
+                {
+                    idPuesto = 0;
+                }
+                return idPuesto;
             }
-            else
-            {
-                idPuesto = 0;
-            }
-            return idPuesto;
+            catch (Exception ex) { throw ex; }
+            finally{ datos.cerrarConexion();}
         }
 
-        public string buscarEmpresa(int idEmpresa)
+        public string buscarEmpresa(int idEmpresa) // sin acceso a DB
         {
             string nombreEmpresa;
 
@@ -168,19 +191,24 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             string queryEmpresa = "SELECT idEmpresa FROM cantarini_control.dbo.empresas WHERE nombre='" + nombreEmpresa + "';";
             int idEmpresa;
-            datos.setearConsulta(queryEmpresa);
-            datos.ejecutarLectura();
-
-            if (datos.Lector.Read())
+            try
             {
-                idEmpresa = (int)datos.Lector["idEmpresa"];
-            }
-            else
-            {
-                idEmpresa = 0;
-            }
+                datos.setearConsulta(queryEmpresa);
+                datos.ejecutarLectura();
 
-            return idEmpresa;
+                if (datos.Lector.Read())
+                {
+                    idEmpresa = (int)datos.Lector["idEmpresa"];
+                }
+                else
+                {
+                    idEmpresa = 0;
+                }
+
+                return idEmpresa;
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.cerrarConexion(); }
         }
 
         public string buscarSatUb(int idSat)
