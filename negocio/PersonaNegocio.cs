@@ -15,8 +15,6 @@ namespace negocio
             List<Persona> listaChoferes = new List<Persona>();
             AccesoDatos datos = new AccesoDatos();
 
-         
-
             string camposListaChoferes = "SELECT dni, idPuesto, idEmpresa, interno, apellido, nombres, ingreso, viajes, promedio, Observaciones, activo, okAdm, okTrafico";
             string database = " FROM " + db_personas + ";";
             string queryChoferes = camposListaChoferes + database;

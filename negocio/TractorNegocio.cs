@@ -61,6 +61,38 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        //a
+        public List<int> listarInternos()
+        {
+            List<int> listaInternos = new List<int>();
+            AccesoDatos datos = new AccesoDatos();
+
+            string campoListaInternos = "SELECT interno";
+            string database = " FROM " + db_tractores + ";";
+            string queryInternos = campoListaInternos + database;
+
+            try
+            {
+                datos.setearConsulta(queryInternos);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    int auxInterno;
+                    auxInterno = (int)datos.Lector["interno"];
+
+                    listaInternos.Add(auxInterno);
+                }
+
+                return listaInternos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
+        }
 
         public void agregar(Tractores nvTr) { }
 
