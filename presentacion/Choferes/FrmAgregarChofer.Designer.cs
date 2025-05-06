@@ -165,6 +165,7 @@
             this.cbxAgregarChoferTipo.Name = "cbxAgregarChoferTipo";
             this.cbxAgregarChoferTipo.Size = new System.Drawing.Size(257, 21);
             this.cbxAgregarChoferTipo.TabIndex = 62;
+            this.cbxAgregarChoferTipo.SelectedIndexChanged += new System.EventHandler(this.cbxAgregarChoferTipo_SelectedIndexChanged);
             // 
             // cbxAgregarChoferEmpresa
             // 
@@ -173,6 +174,7 @@
             this.cbxAgregarChoferEmpresa.Name = "cbxAgregarChoferEmpresa";
             this.cbxAgregarChoferEmpresa.Size = new System.Drawing.Size(257, 21);
             this.cbxAgregarChoferEmpresa.TabIndex = 63;
+            this.cbxAgregarChoferEmpresa.SelectedIndexChanged += new System.EventHandler(this.cbxAgregarChoferEmpresa_SelectedIndexChanged);
             // 
             // cbxAgregarChoferInterno
             // 
@@ -181,6 +183,7 @@
             this.cbxAgregarChoferInterno.Name = "cbxAgregarChoferInterno";
             this.cbxAgregarChoferInterno.Size = new System.Drawing.Size(72, 21);
             this.cbxAgregarChoferInterno.TabIndex = 64;
+            this.cbxAgregarChoferInterno.SelectedIndexChanged += new System.EventHandler(this.cbxAgregarChoferInterno_SelectedIndexChanged);
             // 
             // FrmAgregarChofer
             // 

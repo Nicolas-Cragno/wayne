@@ -36,10 +36,7 @@ namespace presentacion
 
         private void FrmChoferes_Load(object sender, EventArgs e)
         {
-            PersonaNegocio negocio = new PersonaNegocio();
-            listadoChoferes = negocio.listarChoferes();
-            dgvChoferes.DataSource = listadoChoferes;
-            ocultarColumnas();
+            cargar();
         }
 
         private void dgvChoferes_CellContentClick(object sender, DataGridViewCellEventArgs e){}
@@ -49,8 +46,12 @@ namespace presentacion
         {
             Persona seleccion = (Persona)dgvChoferes.CurrentRow.DataBoundItem;
 
-            FrmModificarChofer modificar = new FrmModificarChofer(seleccion);
-            modificar.Show();
+
+            FrmFichaChofer ficha = new FrmFichaChofer(seleccion);
+            ficha.ShowDialog();
+            //FrmModificarChofer modificar = new FrmModificarChofer(seleccion);
+            //modificar.ShowDialog();
+            cargar();
         }
 
         private void filtrarChoferes()
@@ -80,13 +81,22 @@ namespace presentacion
 
         private void tbxChoferesFiltro_Enter(object sender, EventArgs e)
         {
-            filtrarChoferes();
+            //filtrarChoferes();
+        }
+
+        private void cargar()
+        {
+            PersonaNegocio negocio = new PersonaNegocio();
+            listadoChoferes = negocio.listarChoferes();
+            dgvChoferes.DataSource = listadoChoferes;
+            ocultarColumnas();
         }
 
         private void btnChoferesNuevo_Click(object sender, EventArgs e)
         {
             FrmAgregarChofer ventana = new FrmAgregarChofer();
             ventana.ShowDialog();
+            cargar();
 
         }
         private void btnChoferesClose_Click(object sender, EventArgs e)
@@ -94,5 +104,9 @@ namespace presentacion
             Close();            
         }
 
+        private void tbxChoferesFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            filtrarChoferes();
+        }
     }
 }

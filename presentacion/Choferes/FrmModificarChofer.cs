@@ -85,5 +85,20 @@ namespace presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void cbxModificarChoferTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxModificarChoferTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cbxModificarChoferEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxModificarChoferEmpresa.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cbxModificarChoferInterno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxModificarChoferInterno.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
     }
 }

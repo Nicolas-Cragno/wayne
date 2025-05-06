@@ -193,6 +193,7 @@
             this.cbxModificarChoferTipo.Name = "cbxModificarChoferTipo";
             this.cbxModificarChoferTipo.Size = new System.Drawing.Size(257, 21);
             this.cbxModificarChoferTipo.TabIndex = 44;
+            this.cbxModificarChoferTipo.SelectedIndexChanged += new System.EventHandler(this.cbxModificarChoferTipo_SelectedIndexChanged);
             // 
             // cbxModificarChoferEmpresa
             // 
@@ -201,6 +202,7 @@
             this.cbxModificarChoferEmpresa.Name = "cbxModificarChoferEmpresa";
             this.cbxModificarChoferEmpresa.Size = new System.Drawing.Size(147, 21);
             this.cbxModificarChoferEmpresa.TabIndex = 45;
+            this.cbxModificarChoferEmpresa.SelectedIndexChanged += new System.EventHandler(this.cbxModificarChoferEmpresa_SelectedIndexChanged);
             // 
             // cbxModificarChoferInterno
             // 
@@ -209,6 +211,7 @@
             this.cbxModificarChoferInterno.Name = "cbxModificarChoferInterno";
             this.cbxModificarChoferInterno.Size = new System.Drawing.Size(59, 21);
             this.cbxModificarChoferInterno.TabIndex = 46;
+            this.cbxModificarChoferInterno.SelectedIndexChanged += new System.EventHandler(this.cbxModificarChoferInterno_SelectedIndexChanged);
             // 
             // FrmModificarChofer
             // 

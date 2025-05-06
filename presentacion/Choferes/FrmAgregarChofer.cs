@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -56,11 +57,17 @@ namespace presentacion
 
                 negocio.agregar(nuevoChofer);
                 MessageBox.Show("Chofer agregado.");
+
                 Close();
+
+                
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                if(ex.Number == 2627)
+                {
+                    MessageBox.Show("El chofer ingresado ya existe.");
+                }
             }
         }
 
@@ -68,6 +75,21 @@ namespace presentacion
         {
            
             
+        }
+
+        private void cbxAgregarChoferTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxAgregarChoferTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cbxAgregarChoferEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxAgregarChoferEmpresa.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cbxAgregarChoferInterno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxAgregarChoferInterno.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

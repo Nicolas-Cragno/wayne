@@ -9,7 +9,7 @@ namespace dominio
     public class Evento
     {
         public int Id_Evento { get; set; }
-        public int Persona { get; set; }
+        public string Persona { get; set; }
         public int Interno { get; set; }
         public string Tipo { get; set; }
         public string Detalle { get; set; }

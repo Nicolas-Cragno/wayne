@@ -13,6 +13,7 @@ namespace dominio
         public string Satelital_Ubicacion { get; set; }  //convertir a int para buscar cod en db
         public string Satelital_Combustible {  get; set; }  //convertir a int para buscar cod en db
         public string Chofer {  get; set; }
+        public int Dni_Chofer { get; set; }
         public string Dominio { get; set; }
         public string Modelo { get; set; }
         public string Marca { get; set; }

@@ -64,6 +64,44 @@ namespace negocio
             }
         }
 
+        public List<string> nombreChoferes()
+        {
+            List<string> listaChoferes = new List<string>();
+            AccesoDatos datos = new AccesoDatos();
+
+            string camposListaChoferes = "SELECT dni";
+            string database = " FROM " + db_personas + ";";
+            string queryChoferes = camposListaChoferes + database;
+
+
+            try
+            {
+                datos.setearConsulta(queryChoferes);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    int auxDni;
+                    string auxChofer;
+
+                    auxDni = (int)datos.Lector["dni"];
+                    auxChofer = datos.buscarChofer(auxDni);
+
+                    listaChoferes.Add(auxChofer);
+                }
+
+                return listaChoferes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public void agregar(Persona nvCh) 
         {
             AccesoDatos datos = new AccesoDatos();

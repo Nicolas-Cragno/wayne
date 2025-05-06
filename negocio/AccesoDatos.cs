@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using dominio;
 using System.Security.AccessControl;
+using System.Net;
 
 
 namespace negocio
@@ -101,6 +102,81 @@ namespace negocio
                 datos.cerrarConexion();
             }
 
+        }
+
+        public int buscarDni(string apellido, string nombres)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            string queryChofer = "SELECT dni FROM cantarini_control.dbo.personas WHERE apellido = '" + apellido + "' AND nombres = ' " + nombres + "';";
+            int dniChofer;
+
+            try
+            {
+                datos.setearConsulta(queryChofer);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    dniChofer = (int)datos.Lector["dni"];
+                }
+                else
+                {
+                    dniChofer = 0;
+                }
+
+                return dniChofer;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public Persona buscarDatosChofer(int dni)
+        { 
+            Persona auxChofer = new Persona();
+
+            AccesoDatos datos = new AccesoDatos();
+            string queryChofer = "SELECT idPuesto,idEmpresa, interno, apellido, nombres, ingreso, viajes, promedio, Observaciones, activo, okAdm, okTrafico FROM cantarini_control.dbo.personas WHERE dni=" + dni + ";";
+
+            try
+            {
+                datos.setearConsulta(queryChofer);
+                datos.ejecutarLectura();
+
+                int auxPuesto = (int)datos.Lector["idPuesto"];
+                int auxEmpresa = (int)datos.Lector["idEmpresa"];
+
+                if (datos.Lector.Read())
+                {
+                    auxChofer.Dni = dni;
+                    auxChofer.Tipo_Empleado = datos.buscarPuesto(auxPuesto);
+                    auxChofer.Empresa = datos.buscarEmpresa(auxEmpresa);
+                    auxChofer.Interno = (int)datos.Lector["interno"];
+                    auxChofer.Apellido = (string)datos.Lector["apellido"];
+                    auxChofer.Nombres = (string)datos.Lector["nombres"];
+                    auxChofer.Ingreso = (DateTime)datos.Lector["ingreso"];
+                    auxChofer.Viajes = (int)datos.Lector["viajes"];
+                    auxChofer.Promedio = (float)datos.Lector["promedio"];
+                    auxChofer.Observaciones = (string)datos.Lector["Observaciones"];
+                    auxChofer.Activo = (bool)datos.Lector["Activo"];
+                    auxChofer.OK_Adm = (bool)datos.Lector["okAdm"];
+                    auxChofer.OK_Trafico = (bool)datos.Lector["okTrafico"];
+                }
+                
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { datos.cerrarConexion(); }
+
+            return auxChofer;
         }
 
         public string buscarPuesto(int idPuesto)
@@ -211,7 +287,7 @@ namespace negocio
             finally { datos.cerrarConexion(); }
         }
 
-        public string buscarSatUb(int idSat)
+        public string buscarSatUb(int idSat) // sin acceso a DB
         {
             string nombreSat;
 
@@ -236,22 +312,27 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             string querySat = "SELECT idSat_Ub FROM cantarini_control.dbo.ubicacion_satelital WHERE nombre = '" + sat + "';";
             int idSat;
-            datos.setearConsulta(querySat);
-            datos.ejecutarLectura();
-
-            if (datos.Lector.Read())
+            try
             {
-                idSat = (int)datos.Lector["idSat_Ub"];
-            }
-            else
-            {
-                idSat = 0;
-            }
+                datos.setearConsulta(querySat);
+                datos.ejecutarLectura();
 
-            return idSat;
+                if (datos.Lector.Read())
+                {
+                    idSat = (int)datos.Lector["idSat_Ub"];
+                }
+                else
+                {
+                    idSat = 0;
+                }
+
+                return idSat;
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.cerrarConexion(); }
         }
 
-        public string buscarSatCb(int idSat)
+        public string buscarSatCb(int idSat) // Sin acceso a DB
         {
             string nombreSat;
 
@@ -280,22 +361,31 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             string querySat = "SELECT idSat_Cb FROM cantarini_control.dbo.combustible_satelital WHERE nombre = '" + sat + "';";
             int idSat;
-            datos.setearConsulta(querySat);
-            datos.ejecutarLectura();
 
-            if (datos.Lector.Read())
+            try
             {
-                idSat = (int)datos.Lector["idSat_Cb"];
-            }
-            else
-            {
-                idSat = 0;
-            }
+                datos.setearConsulta(querySat);
+                datos.ejecutarLectura();
 
-            return idSat;
+                if (datos.Lector.Read())
+                {
+                    idSat = (int)datos.Lector["idSat_Cb"];
+                }
+                else
+                {
+                    idSat = 0;
+                }
+
+                return idSat;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); } 
         }
 
-        public int numerarBool(bool estado)
+        public int numerarBool(bool estado) // Sin acceso a DB
         {
             int nro;
             if (estado)
@@ -308,6 +398,30 @@ namespace negocio
             }
 
             return nro;
+        }
+
+        public bool validarInterno(int nro)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            bool internoValido = false;
+
+            try
+            {
+                datos.setearConsulta("SELECT interno FROM cantarini_control.dbo.tractores WHERE interno = " + nro + ";");
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    internoValido = true;
+                } 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
+            return internoValido;
         }
 
         public SqlDataReader Lector

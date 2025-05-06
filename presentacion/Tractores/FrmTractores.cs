@@ -65,5 +65,18 @@ namespace presentacion.Tractores
             dgvTractores.DataSource = listaFiltrada;
             ocultarColumnas();
         }
+
+        private void dgvTractores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Tractor seleccion = (Tractor)dgvTractores.CurrentRow.DataBoundItem;
+
+            FrmModificarTractor modificar = new FrmModificarTractor(seleccion);
+            modificar.Show();
+        }
+
+        private void btnTractoresNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -64,14 +64,19 @@
             this.btnTractoresNuevo.TabIndex = 11;
             this.btnTractoresNuevo.Text = "Nuevo Chofer";
             this.btnTractoresNuevo.UseVisualStyleBackColor = true;
+            this.btnTractoresNuevo.Click += new System.EventHandler(this.btnTractoresNuevo_Click);
             // 
             // dgvTractores
             // 
             this.dgvTractores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTractores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTractores.Location = new System.Drawing.Point(34, 107);
+            this.dgvTractores.MultiSelect = false;
             this.dgvTractores.Name = "dgvTractores";
+            this.dgvTractores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTractores.Size = new System.Drawing.Size(453, 263);
             this.dgvTractores.TabIndex = 10;
+            this.dgvTractores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTractores_CellDoubleClick);
             // 
             // tbxTractoresFiltro
             // 

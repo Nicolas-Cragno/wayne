@@ -96,6 +96,12 @@
     <Compile Include="Tractores\FrmTractores.Designer.cs">
       <DependentUpon>FrmTractores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tractores\FrmModificarTractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tractores\FrmModificarTractor.Designer.cs">
+      <DependentUpon>FrmModificarTractor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Choferes\FrmAgregarChofer.resx">
       <DependentUpon>FrmAgregarChofer.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="Tractores\FrmTractores.resx">
       <DependentUpon>FrmTractores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tractores\FrmModificarTractor.resx">
+      <DependentUpon>FrmModificarTractor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

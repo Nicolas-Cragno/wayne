@@ -42,6 +42,7 @@ namespace negocio
                     auxTractor.OK_Adm = (bool)datos.Lector["okAdm"];
                     auxTractor.OK_Satelital = (bool)datos.Lector["okSat"];
                     auxTractor.OK_Trafico = (bool)datos.Lector["okTrafico"];
+                    auxTractor.Dni_Chofer = (int)datos.Lector["dni"];
                     if (!(datos.Lector["dni"] is DBNull))
                     {
                         int auxDni = (int)datos.Lector["dni"];
@@ -103,6 +104,22 @@ namespace negocio
 
         public void agregar(Tractor nvTr) { }
 
-        public void modificar(Tractor mdTr) { }
+        public void modificar(Tractor mdTr) 
+        {
+            /*
+             
+            AccesoDatos datos = new AccesoDatos();
+            int idEmpresa = datos.buscarIdEmpresa(mdTr.Empresa);
+            int idSatUb = datos.buscarIdSatUb(mdTr.Satelital_Ubicacion);
+            int idSatCb = datos.buscarIdSatCb(mdTr.Satelital_Combustible);
+            int dni = datos.buscarDni(mdTr.Chofer);
+
+
+            try
+            {
+                datos.setearConsulta("UPDATE cantarini_control.dbo.tractores SET idEmpresa=" + mdTr.Empresa + ", idSat_Ub=0, idSat_Cb=0, dni=NULL, dominio='#S/A', modelo='', marca='', activo=0, observaciones='', okTaller=0, okAdm=0, okSat=0, okTrafico=0 WHERE interno=0;\r\n");
+            }
+            */
+        }
     }
 }
