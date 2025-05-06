@@ -239,6 +239,7 @@
             this.tbxFichaChoferEventoFiltro.Name = "tbxFichaChoferEventoFiltro";
             this.tbxFichaChoferEventoFiltro.Size = new System.Drawing.Size(217, 20);
             this.tbxFichaChoferEventoFiltro.TabIndex = 23;
+            this.tbxFichaChoferEventoFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxFichaChoferEventoFiltro_KeyPress);
             // 
             // lblFichaChoferEventoFiltro
             // 
@@ -290,6 +291,7 @@
             this.Name = "FrmFichaChofer";
             this.Text = "FrmFichaChofer";
             this.Load += new System.EventHandler(this.FrmFichaChofer_Load_1);
+            this.TextChanged += new System.EventHandler(this.FrmFichaChofer_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFichaChoferEvento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -79,6 +79,25 @@ namespace presentacion
             dgvFichaChoferEvento.Columns["Interno"].Visible = false;
         }
 
+        private void filtrarEventos()
+        {
+            List<Evento> listaFiltrada;
+            string filtro = tbxFichaChoferEventoFiltro.Text;
+
+            if (filtro != "")
+            {
+                listaFiltrada = listadoEventosChofer.FindAll(ev => ev.Tipo.ToString().Contains(filtro.ToUpper()) || ev.Detalle.ToString().Contains(filtro.ToUpper()) || ev.Fecha.ToString().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listadoEventosChofer;
+            }
+
+            dgvFichaChoferEvento.DataSource = null;
+            dgvFichaChoferEvento.DataSource = listaFiltrada;
+            ocultarColumnasEventos();
+        }
+
         private void cargarEventos()
         {
             EventoNegocio negocio = new EventoNegocio();
@@ -98,6 +117,16 @@ namespace presentacion
         private void dgvFichaChoferEvento_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FrmFichaChofer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxFichaChoferEventoFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            filtrarEventos();
         }
     }
 }

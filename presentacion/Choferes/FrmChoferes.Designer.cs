@@ -63,6 +63,7 @@
             this.tbxChoferesFiltro.Name = "tbxChoferesFiltro";
             this.tbxChoferesFiltro.Size = new System.Drawing.Size(273, 20);
             this.tbxChoferesFiltro.TabIndex = 2;
+            this.tbxChoferesFiltro.TextChanged += new System.EventHandler(this.tbxChoferesFiltro_TextChanged);
             this.tbxChoferesFiltro.Enter += new System.EventHandler(this.tbxChoferesFiltro_Enter);
             this.tbxChoferesFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxChoferesFiltro_KeyPress);
             // 

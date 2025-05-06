@@ -108,5 +108,10 @@ namespace presentacion
         {
             filtrarChoferes();
         }
+
+        private void tbxChoferesFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
