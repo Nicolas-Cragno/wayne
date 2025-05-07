@@ -232,6 +232,7 @@
             this.dgvFichaChoferEvento.Size = new System.Drawing.Size(381, 241);
             this.dgvFichaChoferEvento.TabIndex = 21;
             this.dgvFichaChoferEvento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFichaChoferEvento_CellContentClick);
+            this.dgvFichaChoferEvento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFichaChoferEvento_CellDoubleClick);
             // 
             // tbxFichaChoferEventoFiltro
             // 
@@ -259,6 +260,7 @@
             this.btnAgregarFichaChoferEvento.TabIndex = 24;
             this.btnAgregarFichaChoferEvento.Text = "Agregar Evento";
             this.btnAgregarFichaChoferEvento.UseVisualStyleBackColor = true;
+            this.btnAgregarFichaChoferEvento.Click += new System.EventHandler(this.btnAgregarFichaChoferEvento_Click);
             // 
             // FrmFichaChofer
             // 

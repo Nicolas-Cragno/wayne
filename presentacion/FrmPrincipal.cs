@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using presentacion.Tractores;
+using presentacion.Eventos;
 
 namespace presentacion
 {
@@ -38,6 +39,8 @@ namespace presentacion
 
         private void btnEventos_Click(object sender, EventArgs e)
         {
+            FrmEventos ventana = new FrmEventos();
+            ventana.ShowDialog();
         }
 
         private void btnMovimientos_Click(object sender, EventArgs e)

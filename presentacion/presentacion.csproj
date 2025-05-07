@@ -58,6 +58,12 @@
     <Compile Include="Choferes\FrmChoferes.Designer.cs">
       <DependentUpon>FrmChoferes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Choferes\FrmEventoChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choferes\FrmEventoChofer.Designer.cs">
+      <DependentUpon>FrmEventoChofer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Choferes\FrmFichaChofer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,18 @@
     </Compile>
     <Compile Include="Choferes\FrmModificarChofer.Designer.cs">
       <DependentUpon>FrmModificarChofer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\FrmAgregarEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\FrmAgregarEvento.Designer.cs">
+      <DependentUpon>FrmAgregarEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\FrmEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\FrmEventos.Designer.cs">
+      <DependentUpon>FrmEventos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -108,11 +126,20 @@
     <EmbeddedResource Include="Choferes\FrmChoferes.resx">
       <DependentUpon>FrmChoferes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Choferes\FrmEventoChofer.resx">
+      <DependentUpon>FrmEventoChofer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Choferes\FrmFichaChofer.resx">
       <DependentUpon>FrmFichaChofer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Choferes\FrmModificarChofer.resx">
       <DependentUpon>FrmModificarChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\FrmAgregarEvento.resx">
+      <DependentUpon>FrmAgregarEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\FrmEventos.resx">
+      <DependentUpon>FrmEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

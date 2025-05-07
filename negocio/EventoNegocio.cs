@@ -18,7 +18,7 @@ namespace negocio
             List<Evento> listaEventos = new List<Evento>();
             AccesoDatos datos = new AccesoDatos();
 
-            string camposListaEventos = "select IdEvento, dni, interno, tipo, detalle, fecha";
+            string camposListaEventos = "SELECT idEvento, dni, interno, tipo, detalle, fecha ";
             string database = "FROM " + db_eventos + ";";
             string queryEventos = camposListaEventos + database;
 
@@ -31,7 +31,7 @@ namespace negocio
                     Evento auxEvento = new Evento();
                     int auxDni = (int)datos.Lector["dni"];
 
-                    auxEvento.Id_Evento = (int)datos.Lector["IdEvento"];
+                    auxEvento.Id_Evento = (int)datos.Lector["idEvento"];
                     auxEvento.Persona = datos.buscarChofer(auxDni);
                     auxEvento.Interno = (int)datos.Lector["interno"];
                     auxEvento.Tipo = (string)datos.Lector["tipo"];
@@ -95,6 +95,24 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public void agregarEvento(Evento nvEv)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            int dni = datos.buscarDniFull(nvEv.Persona);
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO cantarini_control.dbo.eventos (dni, interno, tipo, detalle, fecha) VALUES (" + dni + ", " + nvEv.Interno + ", '" + nvEv.Tipo + "', '" + nvEv.Detalle + "', convert(date, getdate()));");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
         }
 
         public List<Evento> listarEventosTractor(int interno)

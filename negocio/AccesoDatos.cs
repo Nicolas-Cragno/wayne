@@ -104,10 +104,31 @@ namespace negocio
 
         }
 
+        public int buscarDniFull(string nombreCompleto)
+        {
+            int dni;
+            var division = nombreCompleto.Split(',');
+            string apellido = division[0];
+            string auxNombre = division[1];
+            int largo = auxNombre.Length;
+            string nombres = "";
+
+            for(int i = 0; i < largo; i++)
+            {
+                if (i > 0)
+                {
+                    nombres = nombres + auxNombre[i];
+                }
+            }
+
+            dni = buscarDni(apellido.ToUpper(), nombres.ToUpper());
+
+            return dni;
+        }
         public int buscarDni(string apellido, string nombres)
         {
             AccesoDatos datos = new AccesoDatos();
-            string queryChofer = "SELECT dni FROM cantarini_control.dbo.personas WHERE apellido = '" + apellido + "' AND nombres = ' " + nombres + "';";
+            string queryChofer = "SELECT dni FROM cantarini_control.dbo.personas WHERE apellido = '" + apellido + "' AND nombres = '" + nombres + "';";
             int dniChofer;
 
             try

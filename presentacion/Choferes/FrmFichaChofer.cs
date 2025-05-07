@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using presentacion.Choferes;
+using presentacion.Eventos;
 
 namespace presentacion
 {
@@ -127,6 +129,23 @@ namespace presentacion
         private void tbxFichaChoferEventoFiltro_KeyPress(object sender, KeyPressEventArgs e)
         {
             filtrarEventos();
+        }
+
+        private void btnAgregarFichaChoferEvento_Click(object sender, EventArgs e)
+        {
+            FrmEventoChofer ventana = new FrmEventoChofer(chofer);
+            ventana.ShowDialog();
+            cargar();
+        }
+
+        private void dgvFichaChoferEvento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Evento seleccion = new Evento();
+
+            MessageBox.Show("FICHA DE EVENTO");
+            //FrmEvento evento = new FrmEvento();
+            //evento.ShowDialog();
+            cargar();
         }
     }
 }
