@@ -109,6 +109,8 @@ namespace negocio
             int idPuesto = datos.buscarIdPuesto(nvCh.Tipo_Empleado);
             int idEmpresa = datos.buscarIdEmpresa(nvCh.Empresa);
 
+           
+
             try
             {
                //datos.setearConsulta("INSERT INTO cantarini_control.dbo.personas (dni, idPuesto, idEmpresa, interno, apellido, nombres, ingreso, Observaciones) VALUES (39345602, 0, 0, 0, 'CRAGNO', 'NICOLAS LAUTARO', convert(date, getdate()), 'PRUEBA');");

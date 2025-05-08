@@ -282,6 +282,28 @@ namespace negocio
             return nombreEmpresa;
         }
 
+        public string buscarEmpresaAbreviada(int idEmpresa)
+        {
+            string nombreEmpresa;
+            switch (idEmpresa)
+            {
+                case 1:
+                    nombreEmpresa = "TC";
+                    break;
+                case 2:
+                    nombreEmpresa = "TA";
+                    break;
+                case 3:
+                    nombreEmpresa = "EX";
+                    break;
+                default:
+                    nombreEmpresa = "#N";
+                    break;
+            }
+
+            return nombreEmpresa;
+        }
+
         public int buscarIdEmpresa(string nombreEmpresa)
         {
 

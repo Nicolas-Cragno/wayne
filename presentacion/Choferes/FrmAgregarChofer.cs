@@ -43,6 +43,10 @@ namespace presentacion
         {
             Persona nuevoChofer = new Persona();
             PersonaNegocio negocio = new PersonaNegocio(); 
+            Evento evento = new Evento();
+            EventoNegocio eventoNegocio = new EventoNegocio();
+            AccesoDatos datos = new AccesoDatos();
+            int idEmpresa;
             
             try
             {
@@ -57,6 +61,15 @@ namespace presentacion
 
                 negocio.agregar(nuevoChofer);
                 MessageBox.Show("Chofer agregado.");
+
+                // Registrar como evento ↓↓
+                idEmpresa = datos.buscarIdEmpresa(nuevoChofer.Empresa);
+                string empresa = datos.buscarEmpresaAbreviada(idEmpresa);
+                evento.Dni = nuevoChofer.Dni;
+                evento.Interno = nuevoChofer.Interno;
+                evento.Tipo = "ALTA CHOFER " + empresa;
+                evento.Detalle = "CHOFER DADO DE ALTA POR SISTEMA.";
+                eventoNegocio.registrarEvento(evento);
 
                 Close();
 

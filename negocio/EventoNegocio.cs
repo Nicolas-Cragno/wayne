@@ -124,6 +124,22 @@ namespace negocio
                 finally { datos.cerrarConexion(); }
         }
 
+        public void registrarEvento(Evento nvEv)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO cantarini_control.dbo.eventos (dni, interno, tipo, detalle, fecha) VALUES (" + nvEv.Dni + ", " + nvEv.Interno + ", '" + nvEv.Tipo.ToUpper() + "', '" + nvEv.Detalle.ToUpper() + "', convert(datetime, getdate()));");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
         public void modificarEvento(Evento mdEv)
         {
             AccesoDatos datos = new AccesoDatos();

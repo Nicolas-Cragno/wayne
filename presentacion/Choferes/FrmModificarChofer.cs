@@ -59,6 +59,9 @@ namespace presentacion
         {
             Persona modifChofer = new Persona();
             PersonaNegocio negocio = new PersonaNegocio();
+            Evento evento = new Evento();
+            EventoNegocio eventoNegocio = new EventoNegocio();
+            AccesoDatos datos = new AccesoDatos();
 
             try
             {
@@ -72,9 +75,13 @@ namespace presentacion
                 modifChofer.Activo = cbxModificarChoferActivo.Checked;
                 modifChofer.OK_Adm = cbxModificarChoferADM.Checked;
                 modifChofer.OK_Trafico = cbxModificarChoferTrafico.Checked;
-                
-                /*
-                */
+
+                // Registrar como evento ↓↓
+                evento.Dni = modifChofer.Dni;
+                evento.Interno = modifChofer.Interno;
+                evento.Tipo = "MODIFICACIÓN";
+                evento.Detalle = "MODIFICACIÓN DE DATOS POR SISTEMA.";
+                eventoNegocio.registrarEvento(evento);
 
                 negocio.modificar(modifChofer);
                 MessageBox.Show("Datos actualizados.");
