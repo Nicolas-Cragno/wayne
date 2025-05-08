@@ -68,6 +68,8 @@
             this.dgvEventos.Size = new System.Drawing.Size(453, 263);
             this.dgvEventos.TabIndex = 10;
             this.dgvEventos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellContentClick);
+            this.dgvEventos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellContentDoubleClick);
+            this.dgvEventos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellDoubleClick);
             // 
             // tbxEventosFiltro
             // 

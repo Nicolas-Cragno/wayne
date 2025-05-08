@@ -100,5 +100,10 @@ namespace presentacion
         {
             cbxModificarChoferInterno.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void btnModificarChoferCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -88,6 +88,18 @@
     <Compile Include="Eventos\FrmEventos.Designer.cs">
       <DependentUpon>FrmEventos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Eventos\FrmFichaEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\FrmFichaEvento.Designer.cs">
+      <DependentUpon>FrmFichaEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\FrmModificarEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\FrmModificarEvento.Designer.cs">
+      <DependentUpon>FrmModificarEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Eventos\FrmEventos.resx">
       <DependentUpon>FrmEventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\FrmFichaEvento.resx">
+      <DependentUpon>FrmFichaEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\FrmModificarEvento.resx">
+      <DependentUpon>FrmModificarEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

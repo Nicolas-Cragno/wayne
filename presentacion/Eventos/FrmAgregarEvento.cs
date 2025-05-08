@@ -42,10 +42,10 @@ namespace presentacion.Eventos
 
             try
             {
-                nuevoEvento.Persona = (string)cbxAgregarEventoChofer.Text;
+                nuevoEvento.Persona = (string)cbxAgregarEventoChofer.Text.ToUpper();
                 nuevoEvento.Interno = int.Parse(cbxAgregarEventoInterno.Text);
-                nuevoEvento.Tipo = (string)tbxAgregarEventoTipo.Text;
-                nuevoEvento.Detalle = (string)tbxAgregarEventoDetalle.Text;
+                nuevoEvento.Tipo = (string)tbxAgregarEventoTipo.Text.ToUpper();
+                nuevoEvento.Detalle = (string)tbxAgregarEventoDetalle.Text.ToUpper();
                 nuevoEvento.Fecha = DateTime.Now;
 
                 negocio.agregarEvento(nuevoEvento);
@@ -60,6 +60,11 @@ namespace presentacion.Eventos
                     MessageBox.Show("Evento duplicado");
                 }
             }
+        }
+
+        private void btnAgregarEventoCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

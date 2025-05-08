@@ -32,8 +32,8 @@ namespace presentacion
 
         private void btnTractores_Click(object sender, EventArgs e)
         {
-            //FrmPrueba ventana = new FrmPrueba();
-            FrmTractores ventana = new FrmTractores();
+            FrmPrueba ventana = new FrmPrueba();
+            //FrmTractores ventana = new FrmTractores();
             ventana.ShowDialog();
         }
 
@@ -45,6 +45,9 @@ namespace presentacion
 
         private void btnMovimientos_Click(object sender, EventArgs e)
         {
+            FrmPrueba ventana = new FrmPrueba();
+
+            ventana.ShowDialog();
         }
     }
 }

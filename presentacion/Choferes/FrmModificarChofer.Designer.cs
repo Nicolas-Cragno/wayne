@@ -46,11 +46,12 @@
             this.cbxModificarChoferTipo = new System.Windows.Forms.ComboBox();
             this.cbxModificarChoferEmpresa = new System.Windows.Forms.ComboBox();
             this.cbxModificarChoferInterno = new System.Windows.Forms.ComboBox();
+            this.btnModificarChoferCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnModificarChofer
             // 
-            this.btnModificarChofer.Location = new System.Drawing.Point(268, 324);
+            this.btnModificarChofer.Location = new System.Drawing.Point(29, 340);
             this.btnModificarChofer.Name = "btnModificarChofer";
             this.btnModificarChofer.Size = new System.Drawing.Size(85, 23);
             this.btnModificarChofer.TabIndex = 39;
@@ -213,11 +214,22 @@
             this.cbxModificarChoferInterno.TabIndex = 46;
             this.cbxModificarChoferInterno.SelectedIndexChanged += new System.EventHandler(this.cbxModificarChoferInterno_SelectedIndexChanged);
             // 
+            // btnModificarChoferCerrar
+            // 
+            this.btnModificarChoferCerrar.Location = new System.Drawing.Point(268, 340);
+            this.btnModificarChoferCerrar.Name = "btnModificarChoferCerrar";
+            this.btnModificarChoferCerrar.Size = new System.Drawing.Size(85, 23);
+            this.btnModificarChoferCerrar.TabIndex = 47;
+            this.btnModificarChoferCerrar.Text = "Cerrar";
+            this.btnModificarChoferCerrar.UseVisualStyleBackColor = true;
+            this.btnModificarChoferCerrar.Click += new System.EventHandler(this.btnModificarChoferCerrar_Click);
+            // 
             // FrmModificarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 375);
+            this.Controls.Add(this.btnModificarChoferCerrar);
             this.Controls.Add(this.cbxModificarChoferInterno);
             this.Controls.Add(this.cbxModificarChoferEmpresa);
             this.Controls.Add(this.cbxModificarChoferTipo);
@@ -264,5 +276,6 @@
         private System.Windows.Forms.ComboBox cbxModificarChoferTipo;
         private System.Windows.Forms.ComboBox cbxModificarChoferEmpresa;
         private System.Windows.Forms.ComboBox cbxModificarChoferInterno;
+        private System.Windows.Forms.Button btnModificarChoferCerrar;
     }
 }

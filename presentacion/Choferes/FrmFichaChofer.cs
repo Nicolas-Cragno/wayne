@@ -118,7 +118,7 @@ namespace presentacion
 
         private void dgvFichaChoferEvento_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void FrmFichaChofer_TextChanged(object sender, EventArgs e)
@@ -140,12 +140,16 @@ namespace presentacion
 
         private void dgvFichaChoferEvento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Evento seleccion = new Evento();
+            Evento seleccion = (Evento)dgvFichaChoferEvento.CurrentRow.DataBoundItem;
 
-            MessageBox.Show("FICHA DE EVENTO");
-            //FrmEvento evento = new FrmEvento();
-            //evento.ShowDialog();
+            FrmFichaEvento evento = new FrmFichaEvento(seleccion);
+            evento.ShowDialog();
             cargar();
+        }
+
+        private void btbFichaChoferCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

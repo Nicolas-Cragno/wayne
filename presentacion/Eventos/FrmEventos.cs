@@ -60,7 +60,11 @@ namespace presentacion.Eventos
 
         private void dgvEventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Evento seleccion = (Evento)dgvEventos.CurrentRow.DataBoundItem;
 
+            FrmFichaEvento evento = new FrmFichaEvento(seleccion);
+            evento.ShowDialog();
+            cargar();
         }
 
         private void btnEventosClose_Click(object sender, EventArgs e)
@@ -79,5 +83,19 @@ namespace presentacion.Eventos
             ventana.ShowDialog();
             cargar();
         }
+
+        private void dgvEventos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvEventos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Evento seleccion = (Evento)dgvEventos.CurrentRow.DataBoundItem;
+            FrmFichaEvento evento = new FrmFichaEvento(seleccion);
+            evento.ShowDialog();
+            cargar();
+        }
     }
+    
 }

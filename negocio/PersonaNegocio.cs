@@ -112,7 +112,7 @@ namespace negocio
             try
             {
                //datos.setearConsulta("INSERT INTO cantarini_control.dbo.personas (dni, idPuesto, idEmpresa, interno, apellido, nombres, ingreso, Observaciones) VALUES (39345602, 0, 0, 0, 'CRAGNO', 'NICOLAS LAUTARO', convert(date, getdate()), 'PRUEBA');");
-               datos.setearConsulta("INSERT INTO cantarini_control.dbo.personas (dni, idPuesto, idEmpresa, interno, apellido, nombres, ingreso, Observaciones) VALUES (" + nvCh.Dni + ", " + idPuesto + ", " + idEmpresa + ", " + nvCh.Interno + ", '" + nvCh.Apellido + "', '" + nvCh.Nombres + "', convert(date, getdate()), '" + nvCh.Observaciones + "');");
+               datos.setearConsulta("INSERT INTO cantarini_control.dbo.personas (dni, idPuesto, idEmpresa, interno, apellido, nombres, ingreso, Observaciones) VALUES (" + nvCh.Dni + ", " + idPuesto + ", " + idEmpresa + ", " + nvCh.Interno + ", '" + nvCh.Apellido + "', '" + nvCh.Nombres + "', convert(datetime, getdate()), '" + nvCh.Observaciones + "');");
                datos.ejecutarAccion();
             }
             catch (Exception ex)

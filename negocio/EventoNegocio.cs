@@ -100,12 +100,47 @@ namespace negocio
         public void agregarEvento(Evento nvEv)
         {
             AccesoDatos datos = new AccesoDatos();
+            int dni;
 
-            int dni = datos.buscarDniFull(nvEv.Persona);
+            if (nvEv.Persona != "SIN CHOFER ASIGNADO")
+            {
+                dni = datos.buscarDniFull(nvEv.Persona);
+            }
+            else
+            {
+                dni = 0;
+            }
+
+
+                try
+                {
+                    datos.setearConsulta("INSERT INTO cantarini_control.dbo.eventos (dni, interno, tipo, detalle, fecha) VALUES (" + dni + ", " + nvEv.Interno + ", '" + nvEv.Tipo.ToUpper() + "', '" + nvEv.Detalle.ToUpper() + "', convert(datetime, getdate()));");
+                    datos.ejecutarAccion();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally { datos.cerrarConexion(); }
+        }
+
+        public void modificarEvento(Evento mdEv)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int dni;
+
+            if (mdEv.Persona != "SIN CHOFER ASIGNADO")
+            {
+                dni = datos.buscarDniFull(mdEv.Persona);
+            }
+            else
+            {
+                dni = 0;
+            }
 
             try
             {
-                datos.setearConsulta("INSERT INTO cantarini_control.dbo.eventos (dni, interno, tipo, detalle, fecha) VALUES (" + dni + ", " + nvEv.Interno + ", '" + nvEv.Tipo + "', '" + nvEv.Detalle + "', convert(date, getdate()));");
+                datos.setearConsulta("UPDATE cantarini_control.dbo.eventos SET tipo='" + mdEv.Tipo.ToUpper() + "', detalle='" + mdEv.Detalle.ToUpper() + "' WHERE idEvento="+ mdEv.Id_Evento + ";");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

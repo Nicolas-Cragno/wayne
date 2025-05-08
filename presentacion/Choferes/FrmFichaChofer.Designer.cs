@@ -51,6 +51,7 @@
             this.tbxFichaChoferEventoFiltro = new System.Windows.Forms.TextBox();
             this.lblFichaChoferEventoFiltro = new System.Windows.Forms.Label();
             this.btnAgregarFichaChoferEvento = new System.Windows.Forms.Button();
+            this.btbFichaChoferCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFichaChoferEvento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -229,7 +230,7 @@
             this.dgvFichaChoferEvento.MultiSelect = false;
             this.dgvFichaChoferEvento.Name = "dgvFichaChoferEvento";
             this.dgvFichaChoferEvento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFichaChoferEvento.Size = new System.Drawing.Size(381, 241);
+            this.dgvFichaChoferEvento.Size = new System.Drawing.Size(381, 212);
             this.dgvFichaChoferEvento.TabIndex = 21;
             this.dgvFichaChoferEvento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFichaChoferEvento_CellContentClick);
             this.dgvFichaChoferEvento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFichaChoferEvento_CellDoubleClick);
@@ -262,11 +263,22 @@
             this.btnAgregarFichaChoferEvento.UseVisualStyleBackColor = true;
             this.btnAgregarFichaChoferEvento.Click += new System.EventHandler(this.btnAgregarFichaChoferEvento_Click);
             // 
+            // btbFichaChoferCerrar
+            // 
+            this.btbFichaChoferCerrar.Location = new System.Drawing.Point(706, 363);
+            this.btbFichaChoferCerrar.Name = "btbFichaChoferCerrar";
+            this.btbFichaChoferCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btbFichaChoferCerrar.TabIndex = 25;
+            this.btbFichaChoferCerrar.Text = "Cerrar";
+            this.btbFichaChoferCerrar.UseVisualStyleBackColor = true;
+            this.btbFichaChoferCerrar.Click += new System.EventHandler(this.btbFichaChoferCerrar_Click);
+            // 
             // FrmFichaChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 413);
+            this.Controls.Add(this.btbFichaChoferCerrar);
             this.Controls.Add(this.btnAgregarFichaChoferEvento);
             this.Controls.Add(this.tbxFichaChoferEventoFiltro);
             this.Controls.Add(this.lblFichaChoferEventoFiltro);
@@ -325,5 +337,6 @@
         private System.Windows.Forms.TextBox tbxFichaChoferEventoFiltro;
         private System.Windows.Forms.Label lblFichaChoferEventoFiltro;
         private System.Windows.Forms.Button btnAgregarFichaChoferEvento;
+        private System.Windows.Forms.Button btbFichaChoferCerrar;
     }
 }

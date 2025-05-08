@@ -38,6 +38,7 @@
             this.lblAgregarEventoTipo = new System.Windows.Forms.Label();
             this.cbxAgregarEventoChofer = new System.Windows.Forms.ComboBox();
             this.btnAgregarEvento = new System.Windows.Forms.Button();
+            this.btnAgregarEventoCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbxAgregarEventoInterno
@@ -119,7 +120,7 @@
             // 
             // btnAgregarEvento
             // 
-            this.btnAgregarEvento.Location = new System.Drawing.Point(267, 323);
+            this.btnAgregarEvento.Location = new System.Drawing.Point(28, 323);
             this.btnAgregarEvento.Name = "btnAgregarEvento";
             this.btnAgregarEvento.Size = new System.Drawing.Size(85, 23);
             this.btnAgregarEvento.TabIndex = 84;
@@ -127,11 +128,22 @@
             this.btnAgregarEvento.UseVisualStyleBackColor = true;
             this.btnAgregarEvento.Click += new System.EventHandler(this.btnAgregarEvento_Click_1);
             // 
+            // btnAgregarEventoCerrar
+            // 
+            this.btnAgregarEventoCerrar.Location = new System.Drawing.Point(267, 323);
+            this.btnAgregarEventoCerrar.Name = "btnAgregarEventoCerrar";
+            this.btnAgregarEventoCerrar.Size = new System.Drawing.Size(85, 23);
+            this.btnAgregarEventoCerrar.TabIndex = 85;
+            this.btnAgregarEventoCerrar.Text = "Cerrar";
+            this.btnAgregarEventoCerrar.UseVisualStyleBackColor = true;
+            this.btnAgregarEventoCerrar.Click += new System.EventHandler(this.btnAgregarEventoCerrar_Click);
+            // 
             // FrmAgregarEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 354);
+            this.Controls.Add(this.btnAgregarEventoCerrar);
             this.Controls.Add(this.btnAgregarEvento);
             this.Controls.Add(this.cbxAgregarEventoChofer);
             this.Controls.Add(this.tbxAgregarEventoTipo);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.Label lblAgregarEventoTipo;
         private System.Windows.Forms.ComboBox cbxAgregarEventoChofer;
         private System.Windows.Forms.Button btnAgregarEvento;
+        private System.Windows.Forms.Button btnAgregarEventoCerrar;
     }
 }

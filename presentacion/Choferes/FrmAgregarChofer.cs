@@ -91,5 +91,10 @@ namespace presentacion
         {
             cbxAgregarChoferInterno.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void btnAgregarChoferCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

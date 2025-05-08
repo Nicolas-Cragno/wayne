@@ -44,11 +44,12 @@
             this.cbxAgregarChoferTipo = new System.Windows.Forms.ComboBox();
             this.cbxAgregarChoferEmpresa = new System.Windows.Forms.ComboBox();
             this.cbxAgregarChoferInterno = new System.Windows.Forms.ComboBox();
+            this.btnAgregarChoferCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAgregarChofer
             // 
-            this.btnAgregarChofer.Location = new System.Drawing.Point(267, 324);
+            this.btnAgregarChofer.Location = new System.Drawing.Point(28, 324);
             this.btnAgregarChofer.Name = "btnAgregarChofer";
             this.btnAgregarChofer.Size = new System.Drawing.Size(85, 23);
             this.btnAgregarChofer.TabIndex = 57;
@@ -185,11 +186,22 @@
             this.cbxAgregarChoferInterno.TabIndex = 64;
             this.cbxAgregarChoferInterno.SelectedIndexChanged += new System.EventHandler(this.cbxAgregarChoferInterno_SelectedIndexChanged);
             // 
+            // btnAgregarChoferCerrar
+            // 
+            this.btnAgregarChoferCerrar.Location = new System.Drawing.Point(267, 324);
+            this.btnAgregarChoferCerrar.Name = "btnAgregarChoferCerrar";
+            this.btnAgregarChoferCerrar.Size = new System.Drawing.Size(85, 23);
+            this.btnAgregarChoferCerrar.TabIndex = 65;
+            this.btnAgregarChoferCerrar.Text = "Cerrar";
+            this.btnAgregarChoferCerrar.UseVisualStyleBackColor = true;
+            this.btnAgregarChoferCerrar.Click += new System.EventHandler(this.btnAgregarChoferCerrar_Click);
+            // 
             // FrmAgregarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 354);
+            this.Controls.Add(this.btnAgregarChoferCerrar);
             this.Controls.Add(this.cbxAgregarChoferInterno);
             this.Controls.Add(this.cbxAgregarChoferEmpresa);
             this.Controls.Add(this.cbxAgregarChoferTipo);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.ComboBox cbxAgregarChoferTipo;
         private System.Windows.Forms.ComboBox cbxAgregarChoferEmpresa;
         private System.Windows.Forms.ComboBox cbxAgregarChoferInterno;
+        private System.Windows.Forms.Button btnAgregarChoferCerrar;
     }
 }
